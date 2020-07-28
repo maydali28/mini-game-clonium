@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audio_widget/audio_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,22 +8,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool sound = true;
-
-  void _showDialog() {
-    showDialog(
-      context: context,
-      builder: (_) => new AlertDialog(
-        title: new Text("Number Of Players"),
-        content: new Text("test"),
-        actions: <Widget>[
-          FlatButton(
-            child: new Text("test"),
-            onPressed: () {},
-          )
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +22,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://i.pinimg.com/236x/c0/68/99/c06899ac1992ed4eee31443d608dfad8--tron-legacy-cyberpunk.jpg"),
+                  image: AssetImage("assets/gameBackground.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -49,6 +33,7 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 "Game     Name",
                 style: TextStyle(
+                  fontFamily: 'Rowdies',
                   color: Color(0xff27bfaa),
                   fontSize: 50,
                 ),
@@ -56,23 +41,27 @@ class _HomePageState extends State<HomePage> {
             ),
             Positioned(
               right: 0.0,
-              child: ButtonTheme(
-                minWidth: 50,
-                height: 50,
-                child: FlatButton(
-                  child: Icon(
-                    sound ? Icons.volume_up : Icons.volume_off,
-                    color: Color(0xff19817e),
-                  ),
-                  onPressed: () {
-                    /*player.play(
+              child: Audio.assets(
+                path: "assets/Loveshadow.mp3",
+                play: sound,
+                child: ButtonTheme(
+                  minWidth: 50,
+                  height: 50,
+                  child: FlatButton(
+                    child: Icon(
+                      sound ? Icons.volume_up : Icons.volume_off,
+                      color: Color(0xff19817e),
+                    ),
+                    onPressed: () {
+                      /*player.play(
                         'http://ccmixter.org/content/Loveshadow/Loveshadow_-_SUPERPOWER_(feat_Siobhan_Dakay).mp3');
 
                     */
-                    setState(() {
-                      sound = !sound;
-                    });
-                  },
+                      setState(() {
+                        sound = !sound;
+                      });
+                    },
+                  ),
                 ),
               ),
             ),
@@ -104,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       onPressed: () {
-                        _showDialog();
+                        
                       },
                     ),
                   ),
