@@ -58,6 +58,9 @@ flutter:
       fonts:
         - asset: fonts/CorporationGamesStraight.ttf
         - asset: fonts/CorporationGames.ttf
+    - family: Jumpman
+      fonts:
+        - asset: fonts/Jumpman-1m20.ttf
 
 
   # The following line ensures that the Material Icons font is

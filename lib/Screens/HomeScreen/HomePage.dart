@@ -3,7 +3,8 @@ import 'package:minigame/Screens/HomeScreen/options.dart';
 import './play.dart';
 import './options.dart';
 import './tutorial.dart';
-
+import 'dart:ui' as ui;
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,11 +12,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
+  
   @override
-  Widget build(BuildContext context) {
-    //AudioPlayer player = AudioPlayer();
 
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Game Name",
@@ -37,10 +37,18 @@ class _HomePageState extends State<HomePage> {
                 "Game     Name",
                 style: TextStyle(
                   fontFamily: 'Game',
-                  color: Color(0xff27bfaa),
+                  foreground: Paint()
+                    ..shader = ui.Gradient.linear(
+                      const Offset(0, 20),
+                      const Offset(150, 20),
+                      <Color>[
+                        Color(0xff075147),
+                        Color(0xff27bfaa),
+                      ],
+                    ),
                   fontSize: 50,
                 ),
-              ), 
+              ),
             ),
             Positioned(
               right: 0.0,
@@ -80,7 +88,9 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 40,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+                      },
                     ),
                   ),
                 ],
@@ -92,4 +102,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

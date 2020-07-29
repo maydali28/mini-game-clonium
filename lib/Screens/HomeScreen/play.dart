@@ -28,7 +28,7 @@ class Play extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          showAlertDialog(context);
+          selectPlayer(context);
         },
       ),
     );
@@ -55,14 +55,21 @@ class _Twoplayers extends State<TwoPlayers> {
     return Column(
       children: <Widget>[
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("P1:\t"),
+            Text(
+              "P1:\t",
+              style: TextStyle(
+                  color: Color(0xff27bfaa),
+                  fontSize: 22,
+                  fontFamily: "Jumpman"),
+            ),
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: r1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.red),
+              child: IconButton(
+                iconSize: r1 ? 35.0 : 25.0,
+                icon: Icon(Icons.brightness_1, color: Colors.red),
                 onPressed: () {
                   setState(() {
                     if (r1 == true)
@@ -75,9 +82,9 @@ class _Twoplayers extends State<TwoPlayers> {
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: y1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.yellow),
+              child: IconButton(
+                iconSize: y1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.yellow),
                 onPressed: () {
                   setState(() {
                     if (y1 == true)
@@ -90,9 +97,9 @@ class _Twoplayers extends State<TwoPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: b1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.blue),
+              child: IconButton(
+                iconSize: b1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
                     if (b1 == true)
@@ -105,9 +112,9 @@ class _Twoplayers extends State<TwoPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: g1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.green),
+              child: IconButton(
+                iconSize: g1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.green),
                 onPressed: () {
                   setState(() {
                     if (g1 == true)
@@ -120,14 +127,19 @@ class _Twoplayers extends State<TwoPlayers> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("P2:\t"),
+            Text("P2:\t",
+              style: TextStyle(
+                  color: Color(0xff27bfaa),
+                  fontSize: 22,
+                  fontFamily: "Jumpman"),),
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: r2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.red),
+              child: IconButton(
+                iconSize: r2 ? 35.0 : 25.0,
+                icon: Icon(Icons.brightness_1, color: Colors.red),
                 onPressed: () {
                   setState(() {
                     if (r2 == true)
@@ -140,9 +152,9 @@ class _Twoplayers extends State<TwoPlayers> {
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: y2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.yellow),
+              child: IconButton(
+                iconSize: y2 ? 35.0 : 25.0,
+                icon: Icon(Icons.brightness_1, color: Colors.yellow),
                 onPressed: () {
                   setState(() {
                     if (y2 == true)
@@ -155,9 +167,9 @@ class _Twoplayers extends State<TwoPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: b2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.blue),
+              child: IconButton(
+                iconSize: b2 ? 35.0 : 25.0,
+                icon: Icon(Icons.brightness_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
                     if (b2 == true)
@@ -170,9 +182,9 @@ class _Twoplayers extends State<TwoPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: g2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.green),
+              child: IconButton(
+                iconSize: g2 ? 35.0 : 25.0,
+                icon: Icon(Icons.brightness_1, color: Colors.green),
                 onPressed: () {
                   setState(() {
                     if (g2 == true)
@@ -196,7 +208,14 @@ twoPlayers(BuildContext context) {
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(16.0)),
     ),
-    title: Text("Select Your Color"),
+    title: Text(
+      "Select Your Color",
+      style: TextStyle(
+        fontSize: 25,
+        fontFamily: 'Jumpman',
+        color: Color(0xff2babb9),
+      ),
+    ),
     actions: [
       column,
     ],
@@ -233,14 +252,20 @@ class _Threeplayers extends State<ThreePlayers> {
     return Column(
       children: <Widget>[
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("P1:\t"),
+            Text("P1:\t",
+              style: TextStyle(
+                  color: Color(0xff27bfaa),
+                  fontSize: 22,
+                  fontFamily: "Jumpman"),
+            ),
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: r1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.red),
+              child: IconButton(
+                iconSize: r1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.red),
                 onPressed: () {
                   setState(() {
                     if (r1 == true)
@@ -254,9 +279,9 @@ class _Threeplayers extends State<ThreePlayers> {
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: y1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.yellow),
+              child: IconButton(
+                iconSize: y1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.yellow),
                 onPressed: () {
                   setState(() {
                     if (y1 == true)
@@ -270,9 +295,9 @@ class _Threeplayers extends State<ThreePlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: b1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.blue),
+              child: IconButton(
+                iconSize: b1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
                     if (b1 == true)
@@ -286,9 +311,9 @@ class _Threeplayers extends State<ThreePlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: g1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.green),
+              child: IconButton(
+                iconSize: g1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.green),
                 onPressed: () {
                   setState(() {
                     if (g1 == true)
@@ -302,14 +327,20 @@ class _Threeplayers extends State<ThreePlayers> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("P2:\t"),
+            Text("P2:\t",
+              style: TextStyle(
+                  color: Color(0xff27bfaa),
+                  fontSize: 22,
+                  fontFamily: "Jumpman"),
+            ),
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: r2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.red),
+              child: IconButton(
+                iconSize: r2 ? 35.0 : 25.0,
+                icon: Icon(Icons.brightness_1, color: Colors.red),
                 onPressed: () {
                   setState(() {
                     if (r2 == true)
@@ -323,9 +354,9 @@ class _Threeplayers extends State<ThreePlayers> {
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: y2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.yellow),
+              child: IconButton(
+                iconSize: y2 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.yellow),
                 onPressed: () {
                   setState(() {
                     if (y2 == true)
@@ -339,9 +370,9 @@ class _Threeplayers extends State<ThreePlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: b2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.blue),
+              child: IconButton(
+                iconSize: b2 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
                     if (b2 == true)
@@ -355,9 +386,9 @@ class _Threeplayers extends State<ThreePlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: g2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.green),
+              child: IconButton(
+                iconSize: g2 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.green),
                 onPressed: () {
                   setState(() {
                     if (g2 == true)
@@ -371,14 +402,20 @@ class _Threeplayers extends State<ThreePlayers> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("P3:\t"),
+            Text("P3:\t",
+              style: TextStyle(
+                  color: Color(0xff27bfaa),
+                  fontSize: 22,
+                  fontFamily: "Jumpman"),
+            ),
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: r3 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.red),
+              child: IconButton(
+                iconSize: r3 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.red),
                 onPressed: () {
                   setState(() {
                     if (r3 == true)
@@ -392,9 +429,9 @@ class _Threeplayers extends State<ThreePlayers> {
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: y3 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.yellow),
+              child: IconButton(
+                iconSize: y3 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.yellow),
                 onPressed: () {
                   setState(() {
                     if (y3 == true)
@@ -408,9 +445,9 @@ class _Threeplayers extends State<ThreePlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: b3 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.blue),
+              child: IconButton(
+                iconSize: b3 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
                     if (b3 == true)
@@ -424,9 +461,9 @@ class _Threeplayers extends State<ThreePlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: g3 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.green),
+              child: IconButton(
+                iconSize: g3 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.green),
                 onPressed: () {
                   setState(() {
                     if (g3 == true)
@@ -451,7 +488,14 @@ threePlayers(BuildContext context) {
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(16.0)),
     ),
-    title: Text("Select Your Color"),
+    title: Text(
+      "Select Your Color",
+      style: TextStyle(
+        fontSize: 25,
+        fontFamily: 'Jumpman',
+        color: Color(0xff2babb9),
+      ),
+    ),
     actions: [
       column,
     ],
@@ -492,14 +536,20 @@ class _Fourplayers extends State<FourPlayers> {
     return Column(
       children: <Widget>[
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("P1:\t"),
+            Text("P1:\t",
+              style: TextStyle(
+                  color: Color(0xff27bfaa),
+                  fontSize: 22,
+                  fontFamily: "Jumpman"),
+            ),
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: r1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.red),
+              child: IconButton(
+                iconSize: r1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.red),
                 onPressed: () {
                   setState(() {
                     if (r1 == true)
@@ -513,9 +563,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: y1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.yellow),
+              child: IconButton(
+                iconSize: y1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.yellow),
                 onPressed: () {
                   setState(() {
                     if (y1 == true)
@@ -529,9 +579,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: b1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.blue),
+              child: IconButton(
+                iconSize: b1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
                     if (b1 == true)
@@ -545,9 +595,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: g1 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.green),
+              child: IconButton(
+                iconSize: g1 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.green),
                 onPressed: () {
                   setState(() {
                     if (g1 == true)
@@ -561,14 +611,20 @@ class _Fourplayers extends State<FourPlayers> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("P2:\t"),
+            Text("P2:\t",
+              style: TextStyle(
+                  color: Color(0xff27bfaa),
+                  fontSize: 22,
+                  fontFamily: "Jumpman"),
+            ),
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: r2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.red),
+              child: IconButton(
+                iconSize: r2 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.red),
                 onPressed: () {
                   setState(() {
                     if (r2 == true)
@@ -582,9 +638,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: y2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.yellow),
+              child: IconButton(
+                iconSize: y2 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.yellow),
                 onPressed: () {
                   setState(() {
                     if (y2 == true)
@@ -598,9 +654,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: b2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.blue),
+              child: IconButton(
+                iconSize: b2 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
                     if (b2 == true)
@@ -614,9 +670,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: g2 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.green),
+              child: IconButton(
+                iconSize: g2 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.green),
                 onPressed: () {
                   setState(() {
                     if (g2 == true)
@@ -630,14 +686,20 @@ class _Fourplayers extends State<FourPlayers> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("P3:\t"),
+            Text("P3:\t",
+              style: TextStyle(
+                  color: Color(0xff27bfaa),
+                  fontSize: 22,
+                  fontFamily: "Jumpman"),
+            ),
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: r3 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.red),
+              child: IconButton(
+                iconSize: r3 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.red),
                 onPressed: () {
                   setState(() {
                     if (r3 == true)
@@ -651,9 +713,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: y3 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.yellow),
+              child: IconButton(
+                iconSize: y3 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.yellow),
                 onPressed: () {
                   setState(() {
                     if (y3 == true)
@@ -667,9 +729,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: b3 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.blue),
+              child: IconButton(
+                iconSize: b3 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
                     if (b3 == true)
@@ -683,9 +745,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: g3 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.green),
+              child: IconButton(
+                iconSize: g3 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.green),
                 onPressed: () {
                   setState(() {
                     if (g3 == true)
@@ -699,20 +761,26 @@ class _Fourplayers extends State<FourPlayers> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("P4:\t"),
+            Text("P4:\t",
+              style: TextStyle(
+                  color: Color(0xff27bfaa),
+                  fontSize: 22,
+                  fontFamily: "Jumpman"),
+            ),
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: r4 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.red),
+              child: IconButton(
+                iconSize: r4 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.red),
                 onPressed: () {
                   setState(() {
                     if (r4 == true)
                       r4 = false;
                     else if ((!(g4 || b4 || y4)) && (r1 || r2 || r3) == false)
-                      g4 = true;
+                      r4 = true;
                   });
                 },
               ),
@@ -720,9 +788,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20,
               height: 20,
-              child: FlatButton(
-                color: y4 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.yellow),
+              child: IconButton(
+                iconSize: y4 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.yellow),
                 onPressed: () {
                   setState(() {
                     if (y4 == true)
@@ -736,9 +804,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: b4 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.blue),
+              child: IconButton(
+                iconSize: b4 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
                     if (b4 == true)
@@ -752,9 +820,9 @@ class _Fourplayers extends State<FourPlayers> {
             ButtonTheme(
               minWidth: 20.0,
               height: 20.0,
-              child: FlatButton(
-                color: g4 ? Colors.white : null,
-                child: Icon(Icons.brightness_1, color: Colors.green),
+              child: IconButton(
+                iconSize: g4 ? 35 : 25,
+                icon: Icon(Icons.brightness_1, color: Colors.green),
                 onPressed: () {
                   setState(() {
                     if (g4 == true)
@@ -780,7 +848,14 @@ fourPlayers(BuildContext context) {
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(16.0)),
     ),
-    title: Text("Select Your Color"),
+    title: Text(
+      "Select Your Color",
+      style: TextStyle(
+        fontSize: 25,
+        fontFamily: 'Jumpman',
+        color: Color(0xff2babb9),
+      ),
+    ),
     actions: [
       column,
     ],
@@ -795,45 +870,80 @@ fourPlayers(BuildContext context) {
   );
 }
 
-showAlertDialog(BuildContext context) {
+selectPlayer(BuildContext context) async {
   Widget row = Row(
     children: <Widget>[
       ButtonTheme(
-        minWidth: 20.0,
-        height: 40.0,
+        minWidth: 28.0,
+        height: 28.0,
         child: RaisedButton(
-          child: Text("   2\nPlayers"),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16.0)),
+          ),
+          child: Text(
+            "   2\nPlayers",
+            style: TextStyle(
+              fontFamily: 'Jumpman',
+              fontSize: 16,
+              color: Color(0xffccffff),
+            ),
+          ),
+          color: Color(0xff81b9da),
           hoverColor: Color(0xff8fc8dc),
           splashColor: Color(0xff103c4b),
-          animationDuration: Duration(seconds: 10),
+          animationDuration: Duration(seconds: 2),
           onPressed: () {
             Navigator.of(context).pop();
             twoPlayers(context);
           },
         ),
       ),
+      Text(" "),
       ButtonTheme(
-        minWidth: 20.0,
-        height: 40.0,
+        minWidth: 28.0,
+        height: 28.0,
         child: RaisedButton(
-          child: Text("   3\nPlayers"),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16.0)),
+          ),
+          color: Color(0xff81b9da),
+          child: Text(
+            "   3\nPlayers",
+            style: TextStyle(
+              color: Color(0xffccffff),
+              fontFamily: 'Jumpman',
+              fontSize: 16,
+            ),
+          ),
           hoverColor: Color(0xff8fc8dc),
           splashColor: Color(0xff103c4b),
-          animationDuration: Duration(seconds: 10),
+          animationDuration: Duration(seconds: 2),
           onPressed: () {
             Navigator.of(context).pop();
             threePlayers(context);
           },
         ),
       ),
+      Text(" "),
       ButtonTheme(
-        minWidth: 20.0,
-        height: 40.0,
+        minWidth: 28.0,
+        height: 28.0,
         child: RaisedButton(
-          child: Text("  4\nPlayers"),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16.0)),
+          ),
+          child: Text(
+            "   4\nPlayers",
+            style: TextStyle(
+              color: Color(0xffccffff),
+              fontFamily: 'Jumpman',
+              fontSize: 16,
+            ),
+          ),
+          color: Color(0xff81b9da),
           hoverColor: Color(0xff8fc8dc),
           splashColor: Color(0xff103c4b),
-          animationDuration: Duration(seconds: 10),
+          animationDuration: Duration(seconds: 2),
           onPressed: () {
             Navigator.of(context).pop();
             fourPlayers(context);
@@ -848,8 +958,22 @@ showAlertDialog(BuildContext context) {
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(16.0)),
     ),
-    title: Text("Select Players"),
-    content: Text("Select number of players"),
+    title: Text(
+      "Select Players",
+      style: TextStyle(
+        fontSize: 25,
+        fontFamily: 'Jumpman',
+        color: Color(0xff2babb9),
+      ),
+    ),
+    content: Text(
+      "Select number of players",
+      style: TextStyle(
+        fontFamily: 'Rowdies',
+        color: Color(0xff27bfaa),
+        fontSize: 19,
+      ),
+    ),
     actions: [
       row,
     ],
