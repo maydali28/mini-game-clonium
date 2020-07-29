@@ -50,6 +50,14 @@ flutter:
         - asset: fonts/Rowdies-Bold.ttf
         - asset: fonts/Rowdies-Light.ttf
         - asset: fonts/Rowdies-Regular.ttf
+    - family: Game
+      fonts:
+        - asset: fonts/Games.ttf
+        - asset: fonts/Games-Italic.ttf
+    - family: Corporation
+      fonts:
+        - asset: fonts/CorporationGamesStraight.ttf
+        - asset: fonts/CorporationGames.ttf
 
 
   # The following line ensures that the Material Icons font is
