@@ -19,7 +19,7 @@ class _SoundState extends State<Sound> {
         child: FlatButton(
           child: Icon(
             sound ? Icons.volume_up : Icons.volume_off,
-            color: Color(0xff19817e),
+            color: Color(0xff81b9da),
           ),
           onPressed: () {
             setState(() {

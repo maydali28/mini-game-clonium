@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   audioplayers: ^0.15.1
   audio_widget: ^1.0.0
+  provider: ^4.3.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -42,8 +43,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/gameBackground.jpg
+    - assets/stars.jpg
     - assets/Loveshadow.mp3
+    - assets/star.png
+    - assets/game.jpg
   fonts:
     - family: Rowdies
       fonts:

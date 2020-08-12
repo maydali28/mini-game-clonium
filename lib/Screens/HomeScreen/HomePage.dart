@@ -12,9 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
+  int cubeNb = 8;
   @override
-
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -25,13 +24,13 @@ class _HomePageState extends State<HomePage> {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/gameBackground.jpg"),
+                  image: AssetImage("assets/stars.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             Positioned.fill(
-              top: 70.0,
+              top: 90.0,
               left: 110,
               child: Text(
                 "Game     Name",
@@ -42,8 +41,8 @@ class _HomePageState extends State<HomePage> {
                       const Offset(0, 20),
                       const Offset(150, 20),
                       <Color>[
-                        Color(0xff075147),
-                        Color(0xff27bfaa),
+                        Color(0xff1549d4),
+                        Color(0xff188bb3),
                       ],
                     ),
                   fontSize: 50,
@@ -58,7 +57,7 @@ class _HomePageState extends State<HomePage> {
               top: 250.0,
               child: Column(
                 children: <Widget>[
-                  new Play(),
+                  new Play(cubesNb:cubeNb),
                   SizedBox(height: 20),
                   new Tutorial(),
                   SizedBox(height: 20),
@@ -89,7 +88,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       onPressed: () {
-                        SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+                        SystemChannels.platform
+                            .invokeMethod('SystemNavigator.pop');
                       },
                     ),
                   ),
