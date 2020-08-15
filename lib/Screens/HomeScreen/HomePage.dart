@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:minigame/Screens/HomeScreen/options.dart';
-import './play.dart';
-import './options.dart';
-import './tutorial.dart';
+import 'play.dart';
+import 'Sound.dart';
 import 'dart:ui' as ui;
 import 'package:flutter/services.dart';
 
@@ -12,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int cubeNb = 8;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,6 +19,7 @@ class _HomePageState extends State<HomePage> {
       home: Scaffold(
         body: Stack(
           children: <Widget>[
+            // Background image
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -29,9 +28,10 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            // Title 
             Positioned.fill(
               top: 90.0,
-              left: 110,
+              left: 90,
               child: Text(
                 "Game     Name",
                 style: TextStyle(
@@ -45,30 +45,24 @@ class _HomePageState extends State<HomePage> {
                         Color(0xff188bb3),
                       ],
                     ),
-                  fontSize: 50,
+                  fontSize: 70,
                 ),
               ),
             ),
-            Positioned(
-              right: 0.0,
-              child: new Sound(),
-            ),
             Positioned.fill(
-              top: 250.0,
+              top: 320.0,
               child: Column(
                 children: <Widget>[
-                  new Play(cubesNb:cubeNb),
-                  SizedBox(height: 20),
-                  new Tutorial(),
-                  SizedBox(height: 20),
-                  new Options(),
-                  SizedBox(height: 20),
+                  new Play(cubesNb:8),
+                  SizedBox(height: 30),
+                  new Sound(),
+                  SizedBox(height: 30),
+                  // Exit button
                   ButtonTheme(
                     minWidth: 250.0,
                     height: 50.0,
                     child: RaisedButton(
                       color: Color(0xffccffff),
-                      hoverColor: Color(0xff64e9e9),
                       highlightColor: Color(0xffcdffcd),
                       splashColor: Color(0xff19817e),
                       animationDuration: Duration(seconds: 15),
@@ -97,7 +91,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ],
-        ), //how to make the drawer appear without appBar
+        ),
       ),
     );
   }

@@ -45,7 +45,6 @@ flutter:
   assets:
     - assets/stars.jpg
     - assets/Loveshadow.mp3
-    - assets/star.png
     - assets/game.jpg
   fonts:
     - family: Rowdies

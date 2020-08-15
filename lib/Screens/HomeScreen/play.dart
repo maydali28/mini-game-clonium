@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../Game.dart';
+import '../GameScreen/GamePage.dart';
 
 // ignore: must_be_immutable
 class Play extends StatelessWidget {
-  final int cubesNb;
   int playersNb;
-  Play({this.cubesNb = 6});
+  int cubesNb;
+  Play({this.cubesNb});
   List<Color> playersColor = new List<Color>();
   @override
   Widget build(BuildContext context) {
@@ -45,202 +45,135 @@ class Play extends StatelessWidget {
     String ch2 = "";
     String ch3 = "";
     String ch4 = "";
+    Color c1 = Colors.white;
+    Color c2 = Colors.transparent;
+    Color c3 = Colors.transparent;
+
     Widget selectPlayer = Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        // Select color of players and their number
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            StatefulBuilder(
+                builder: (BuildContext context, StateSetter setState) {
+              return GestureDetector(
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [Color(0xff6E0C23), Color(0xffEC728F)]),
+                    borderRadius: BorderRadius.circular(30.0),
+                    border: Border.all(
+                      width: 2.5,
+                      color: (ch1 != "") ? Colors.white : Colors.transparent,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  if (playersColor.indexOf(Colors.red) != -1) {
+                    playersColor.remove(Colors.red);
+                    playersNb -= 1;
+                    setState(() => ch1 = "");
+                  } else {
+                    playersNb += 1;
+                    playersColor.add(Colors.red);
+                    setState(() => ch1 = "Player");
+                  }
+                },
+              );
+            }),
+            Text("     "),
+            StatefulBuilder(
+                builder: (BuildContext context, StateSetter setState) {
+              return GestureDetector(
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [Color(0xff2D9C40), Color(0xff57E695)]),
+                    borderRadius: BorderRadius.circular(30.0),
+                    border: Border.all(
+                      width: 2.5,
+                      color: (ch2 != "") ? Colors.white : Colors.transparent,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  if (playersColor.indexOf(Colors.green) != -1) {
+                    playersColor.remove(Colors.green);
+                    playersNb -= 1;
+                    setState(() => ch2 = "");
+                  } else {
+                    playersNb += 1;
+                    playersColor.add(Colors.green);
+                    setState(() => ch2 = "Player");
+                  }
+                },
+              );
+            }),
+            Text("     "),
+            StatefulBuilder(
+                builder: (BuildContext context, StateSetter setState) {
+              return GestureDetector(
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [Color(0xffDAEF55), Color(0xff9FAF35)]),
+                    borderRadius: BorderRadius.circular(30.0),
+                    border: Border.all(
+                      width: 2.5,
+                      color: (ch3 != "") ? Colors.white : Colors.transparent,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  if (playersColor.indexOf(Colors.yellow) != -1) {
+                    playersColor.remove(Colors.yellow);
+                    playersNb -= 1;
+                    setState(() => ch3 = "");
+                  } else {
+                    playersNb += 1;
+                    playersColor.add(Colors.yellow);
+                    setState(() => ch3 = "Player");
+                  }
+                },
+              );
+            }),
+            Text("     "),
             ButtonTheme(
               minWidth: 124.0,
               height: 45.0,
               child: StatefulBuilder(
                   builder: (BuildContext context, StateSetter setState) {
-                return RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                  ),
-                  padding: const EdgeInsets.all(0.0),
+                return GestureDetector(
                   child: Container(
-                    decoration: const BoxDecoration(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: <Color>[
-                          Color(0xff911414),
-                          Color(0xffF05B5B),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                    ),
-                    constraints:
-                        const BoxConstraints(minWidth: 124.0, minHeight: 45.0),
-                    alignment: Alignment.center,
-                    child: Text(
-                      ch1,
-                      style: TextStyle(
-                        fontFamily: 'Jumpman',
-                        fontSize: 16,
-                        color: Color(0xffccffff),
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                          colors: [Color(0xff4E0A58), Color(0xffD13DE8)]),
+                      borderRadius: BorderRadius.circular(30.0),
+                      border: Border.all(
+                        width: 2.5,
+                        color: (ch4 != "") ? Colors.white : Colors.transparent,
                       ),
                     ),
                   ),
-                  splashColor: Color(0xff103c4b),
-                  animationDuration: Duration(seconds: 2),
-                  onPressed: () {
-                    if (playersColor.indexOf(Colors.red) != -1) {
-                      playersColor.remove(Colors.red);
-                      playersNb -= 1;
-                      setState(() => ch1 = "");
-                    } else {
-                      playersNb += 1;
-                      playersColor.add(Colors.red);
-                      setState(() => ch1 = "Player");
-                    }
-                  },
-                );
-              }),
-            ),
-            Text(" "),
-            ButtonTheme(
-              minWidth: 124.0,
-              height: 45.0,
-              child: StatefulBuilder(
-                  builder: (BuildContext context, StateSetter setState) {
-                return RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                  ),
-                  padding: const EdgeInsets.all(0.0),
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: <Color>[
-                          Color(0xff19702D),
-                          Color(0xff4CF373),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                    ),
-                    constraints:
-                        const BoxConstraints(minWidth: 124.0, minHeight: 45.0),
-                    alignment: Alignment.center,
-                    child: Text(
-                      ch2,
-                      style: TextStyle(
-                        fontFamily: 'Jumpman',
-                        fontSize: 16,
-                        color: Color(0xffccffff),
-                      ),
-                    ),
-                  ),
-                  color: Colors.greenAccent,
-                  splashColor: Color(0xff103c4b),
-                  animationDuration: Duration(seconds: 2),
-                  onPressed: () {
-                    if (playersColor.indexOf(Colors.green) != -1) {
-                      playersColor.remove(Colors.green);
-                      playersNb -= 1;
-                      setState(() => ch2 = "");
-                    } else {
-                      playersNb += 1;
-                      playersColor.add(Colors.green);
-                      setState(() => ch2 = "Player");
-                    }
-                  },
-                );
-              }),
-            ),
-          ],
-        ),
-        Text(""),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ButtonTheme(
-              minWidth: 124.0,
-              height: 45.0,
-              child: StatefulBuilder(
-                  builder: (BuildContext context, StateSetter setState) {
-                return RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                  ),
-                  padding: const EdgeInsets.all(0.0),
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: <Color>[
-                          Color(0xffC4C430),
-                          Color(0xffF3F36D),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                    ),
-                    constraints:
-                        const BoxConstraints(minWidth: 124.0, minHeight: 45.0),
-                    alignment: Alignment.center,
-                    child: Text(
-                      ch3,
-                      style: TextStyle(
-                        fontFamily: 'Jumpman',
-                        fontSize: 16,
-                        color: Color(0xffccffff),
-                      ),
-                    ),
-                  ),
-                  color: Colors.yellowAccent,
-                  splashColor: Color(0xff103c4b),
-                  animationDuration: Duration(seconds: 2),
-                  onPressed: () {
-                    if (playersColor.indexOf(Colors.yellow) != -1) {
-                      playersColor.remove(Colors.yellow);
-                      playersNb -= 1;
-                      setState(() => ch3 = "");
-                    } else {
-                      playersNb += 1;
-                      playersColor.add(Colors.yellow);
-                      setState(() => ch3 = "Player");
-                    }
-                  },
-                );
-              }),
-            ),
-            Text(" "),
-            ButtonTheme(
-              minWidth: 124.0,
-              height: 45.0,
-              child: StatefulBuilder(
-                  builder: (BuildContext context, StateSetter setState) {
-                return RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                  ),
-                  padding: const EdgeInsets.all(0.0),
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: <Color>[
-                          Color(0xff74167F),
-                          Color(0xffEB70F9),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                    ),
-                    constraints:
-                        const BoxConstraints(minWidth: 124.0, minHeight: 45.0),
-                    alignment: Alignment.center,
-                    child: Text(
-                      ch4,
-                      style: TextStyle(
-                        fontFamily: 'Jumpman',
-                        fontSize: 16,
-                        color: Color(0xffccffff),
-                      ),
-                    ),
-                  ),
-                  color: Colors.blueAccent,
-                  splashColor: Color(0xff103c4b),
-                  animationDuration: Duration(seconds: 2),
-                  onPressed: () {
+                  onTap: () {
                     if (playersColor.indexOf(Colors.purple) != -1) {
                       playersColor.remove(Colors.purple);
                       playersNb -= 1;
@@ -256,8 +189,116 @@ class Play extends StatelessWidget {
             ),
           ],
         ),
+        Text(" "),
+        // Select board size
+        StatefulBuilder(builder: (BuildContext context, StateSetter setState) {
+          return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Text(
+              "BOARD   ",
+              style: TextStyle(
+                fontSize: 20,
+                fontFamily: 'Jumpman',
+                fontWeight: FontWeight.bold,
+                color: Color(0xffccffff),
+              ),
+            ),
+            GestureDetector(
+              child: Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Color(0xffccffff),
+                  borderRadius: BorderRadius.circular(8.0),
+                  border: Border.all(
+                    width: 2.5,
+                    color: c1,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    "x8",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Color(0xff8DC1EF),
+                    ),
+                  ),
+                ),
+              ),
+              onTap: () {
+                setState(() {
+                  cubesNb = 8;
+                  c1 = Colors.white;
+                  c2 = Colors.transparent;
+                  c3 = Colors.transparent;
+                });
+              },
+            ),
+            Text("  "),
+            GestureDetector(
+              child: Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Color(0xffccffff),
+                  borderRadius: BorderRadius.circular(8.0),
+                  border: Border.all(width: 2.5, color: c2),
+                ),
+                child: Center(
+                  child: Text(
+                    "x7",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Color(0xff8DC1EF),
+                    ),
+                  ),
+                ),
+              ),
+              onTap: () {
+                setState(() {
+                  cubesNb = 7;
+                  c1 = Colors.transparent;
+                  c3 = Colors.transparent;
+                  c2 = Colors.white;
+                });
+              },
+            ),
+            Text("  "),
+            GestureDetector(
+              child: Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Color(0xffccffff),
+                  borderRadius: BorderRadius.circular(8.0),
+                  border: Border.all(
+                    width: 2.5,
+                    color: c3,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    "x6",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Color(0xff8DC1EF),
+                    ),
+                  ),
+                ),
+              ),
+              onTap: () {
+                setState(() {
+                  cubesNb = 6;
+                  c1 = Colors.transparent;
+                  c2 = Colors.transparent;
+                  c3 = Colors.white;
+                });
+              },
+            ),
+          ]);
+        }),
         Text(""),
         Text(""),
+        // Start button
         ButtonTheme(
           minWidth: 124.0,
           height: 45.0,

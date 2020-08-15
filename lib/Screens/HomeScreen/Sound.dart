@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Tutorial extends StatefulWidget
+class Sound extends StatefulWidget
 {
   @override
-  _TutorialState createState() => _TutorialState();
+  _SoundState createState() => _SoundState();
 }
 
-class _TutorialState extends State<Tutorial>
+class _SoundState extends State<Sound>
 {
   @override
 
@@ -30,7 +30,7 @@ class _TutorialState extends State<Tutorial>
                       ),
                       textColor: Color(0xff81b9da),
                       child: Text(
-                        "TUTORIAL",
+                        "SOUND",
                         style: TextStyle(
                           fontFamily: 'Rowdies',
                           fontSize: 40,
@@ -41,3 +41,37 @@ class _TutorialState extends State<Tutorial>
                   );
   }
 }
+
+// import 'package:flutter/material.dart';
+// import 'package:audio_widget/audio_widget.dart';
+
+// class Sound extends StatefulWidget {
+//   @override
+//   _SoundState createState() => _SoundState();
+// }
+
+// class _SoundState extends State<Sound> {
+//   @override
+//   Widget build(BuildContext context) {
+//     bool sound = true;
+//     return Audio.assets(
+//       path: "assets/Loveshadow.mp3",
+//       play: sound,
+//       child: ButtonTheme(
+//         minWidth: 50,
+//         height: 50,
+//         child: FlatButton(
+//           child: Icon(
+//             sound ? Icons.volume_up : Icons.volume_off,
+//             color: Color(0xff81b9da),
+//           ),
+//           onPressed: () {
+//             setState(() {
+//               sound = !sound;
+//             });
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
