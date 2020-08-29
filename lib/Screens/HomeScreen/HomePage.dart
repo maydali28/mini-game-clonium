@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'play.dart';
+import 'PlayVsAI.dart';
+import 'Multi-play.dart';
 import 'Sound.dart';
 import 'dart:ui' as ui;
 import 'package:flutter/services.dart';
@@ -10,12 +11,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Game Name",
+      title: "CLONING GAME",
       home: Scaffold(
         body: Stack(
           children: <Widget>[
@@ -28,12 +29,17 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            // Title 
+            Positioned(
+              top: 8.0,
+              left: 300.0,
+              child: new Sound(),
+            ),
+            //Title
             Positioned.fill(
               top: 90.0,
-              left: 90,
+              left: 70,
               child: Text(
-                "Game     Name",
+                "CLONING\n  GAME",
                 style: TextStyle(
                   fontFamily: 'Game',
                   foreground: Paint()
@@ -45,17 +51,18 @@ class _HomePageState extends State<HomePage> {
                         Color(0xff188bb3),
                       ],
                     ),
-                  fontSize: 70,
+                  fontSize: 60,
                 ),
               ),
             ),
+            //Buttons
             Positioned.fill(
               top: 320.0,
               child: Column(
                 children: <Widget>[
-                  new Play(cubesNb:8),
+                  new Play(cubesNb: 8), //PlayVsAI
                   SizedBox(height: 30),
-                  new Sound(),
+                  new MPlay(cubesNb: 8), //Multi-Players
                   SizedBox(height: 30),
                   // Exit button
                   ButtonTheme(
@@ -65,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                       color: Color(0xffccffff),
                       highlightColor: Color(0xffcdffcd),
                       splashColor: Color(0xff19817e),
-                      animationDuration: Duration(seconds: 15),
+                      animationDuration: Duration(seconds: 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                         side: BorderSide(
@@ -83,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         SystemChannels.platform
-                            .invokeMethod('SystemNavigator.pop');
+                            .invokeMethod('SystemNavigator.pop'); //Exit the app
                       },
                     ),
                   ),

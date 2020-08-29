@@ -26,6 +26,9 @@ dependencies:
   audioplayers: ^0.15.1
   audio_widget: ^1.0.0
   provider: ^4.3.2
+  sounds: ^0.9.3
+  threading: ^0.0.10
+  flutter_launcher_icons: "^0.7.3"
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -42,9 +45,10 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   uses-material-design: true
+  
   assets:
     - assets/stars.jpg
-    - assets/Loveshadow.mp3
+    - assets/gamemusic.mp3
     - assets/game.jpg
   fonts:
     - family: Rowdies
@@ -63,7 +67,10 @@ flutter:
     - family: Jumpman
       fonts:
         - asset: fonts/Jumpman-1m20.ttf
-
+flutter_icons:
+  android: "icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
