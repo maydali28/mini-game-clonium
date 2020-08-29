@@ -19,7 +19,7 @@ class GameVsAI extends StatefulWidget {
 }
 
 class _GameVsAIState extends State<GameVsAI> with WidgetsBindingObserver {
-  int iterator = 3; // it's used to make  AI made random 3 steps at beginning
+  int iterator = 7; // it's used to make  AI made random 3 steps at beginning
   int playersNb = 2;
   final List<Color> colorPlayer;
   final int cubesNb;
