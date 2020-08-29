@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               top: 90.0,
               left: 70,
               child: Text(
-                "CLONING\n  GAME",
+                "CLONING\nGAME",
                 style: TextStyle(
                   fontFamily: 'Game',
                   foreground: Paint()
